@@ -1,5 +1,5 @@
 
-int n=20;
+public int n=20;
 public void setup()
 {
 	size(500,500);
@@ -12,7 +12,7 @@ public void draw()
 	//translate(width/2,height/2);
 	//rotate(PI/3.0);
 	fractal(width/2,height/2,n);
-	if(n<400)
+	if(n<600)
 		n=n+10;
 	else		
 		n=20;
@@ -27,7 +27,10 @@ public void fractal(float x, float y, float siz)
 		if(mousePressed==true)
 			ellipse(x,y,siz,siz);
 		else
-			rect(x,y,siz,siz);	
+		{
+			rect(x,y,siz,siz);
+			triangle(x-siz/2,y+siz,x,y,x+siz/2,y+siz);
+		}		
 	}
 	else
 	{
